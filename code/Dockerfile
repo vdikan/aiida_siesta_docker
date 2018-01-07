@@ -21,6 +21,9 @@ RUN apt-get -qq update \
     && ../Src/obj_setup.sh \
     && make \
     && cp siesta /usr/local/bin/siesta \
+    && cd ../Util/STM/simple-stm \
+    && make \
+    && cp plstm /usr/local/bin/plstm \
     && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /code
