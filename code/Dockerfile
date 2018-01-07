@@ -20,8 +20,8 @@ RUN apt-get -qq update \
     libblas-common libblas-dev liblapack-dev libhdf5-dev \
     && ../Src/obj_setup.sh \
     && make \
-    && cp siesta /usr/local/bin/siesta
-    #&& rm -rf /var/lib/apt/lists/*
+    && cp siesta /usr/local/bin/siesta \
+    && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /code
 RUN export PYTHONPATH=/code:$PYTHONPATH \
